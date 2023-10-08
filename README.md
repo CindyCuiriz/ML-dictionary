@@ -5,15 +5,15 @@
 Machine Learning is the field of study that gives computers the ability to learn without being explicitly programmed.
 It is the science (and art) of programming computers so they can learn from data.
 
-## MACHINE LEARNING CATHEGORIES? 
+## MACHINE LEARNING CATEGORIES? 
 
 #### Supervised
 * k-Nearest Neighbors
-* Linear Regression 
+* Linear Regression:  You feed it your training examples and it finds the parameters that make the linear model fit best to your data. This is called training the model. 
 * Logistic Regression 
 * Support Vector Machines (SVMs) 
 * Decision Trees and Random Forests • Neural network
-#### unsupervised
+#### Unsupervised
 * Clustering
   * K-Means
   * DBSCAN
@@ -28,7 +28,7 @@ It is the science (and art) of programming computers so they can learn from data
 * Association rule learning
   * Apriori
   * Eclat
-#### semisupervised
+#### Semisupervised
 
 Algorithms that can deal with partially labeled training data, usually a lot of unlabeled data and a little bit of labeled data. Google photos is a great example (photo recognition and labeling)
 
@@ -38,8 +38,28 @@ An agent can observe the environment, select and perform actions, and get reward
 It must then learn by itself what is the best strategy, called a policy, to get the most reward over time. A policy defines what action the agent should choose when it is in a given situation.
 For example, it is used on robots so they learn how to walk. 
 
-#### online vs batch learning
-#### instance based vs model-based learning
+#### Online vs batch learning
+
+* Batch Learning:  The system is incapable of learning incrementally: it must be trained using all the available data. This will generally take a lot of time and computing resources, so it is typically done offline. First the system is trained, and then it is launched into production and runs without learning anymore; it just applies what it has learned. This is called offline learning. If you want a batch learning system to know about new data (such as a new type of spam), you need to train a new version of the system from scratch on the full dataset (not just the new data, but also the old data), then stop the old system and replace it with the new one.
+* Online Learning: You train the system incrementally by feeding it data instances sequentially, either individually or by small groups called mini-batches. Each learning step is fast and cheap, so the system can learn about new data on the fly, as it arrives. It is great for systems that receive data as a continuous flow (e.g., stock prices) and need to adapt to change rapidly or autonomously.
+
+## One important parameter of online learning systems is how fast they should adapt to changing data: this is called the learning rate. If you set a high learning rate, then your system will rapidly adapt to new data, but it will also tend to quickly forget the old data (you don’t want a spam filter to flag only the latest kinds of spam it was shown). Conversely, if you set a low learning rate, the system will have more inertia; that is, it will learn more slowly, but it will also be less sensitive to noise in the new data or to sequences of nonrepresentative data points (outliers). A big challenge with online learning is that if bad data is fed to the system, the system’s performance will gradually decline. If we are talking about a live system, your clients will notice. For example, bad data could come from a malfunctioning sensor on a robot, or from someone spamming a search engine to try to rank high in search results. To reduce this risk, you need to monitor your system closely and promptly switch learning off (and possibly revert to a previously working state) if you detect a drop in performance. You may also want to monitor the input data and react to abnormal data (e.g., using an anomaly detection algorithm). 
+
+
+#### Instance based vs model-based learning
+This way of categorizing ML algorithms is by the way they generalize examples they have seen before. A good performance on the training data is insufficient, the true goal is to perform good on new instances/predictions.
+
+* Instance based learning:  the system learns the examples by heart, then generalizes to new cases by comparing them to the learned examples (or a subset of them), using a similarity measure.
+
+* Model-based learning:  Build a model of these examples, then use that model to make predictions
+
+## UTILITY FUNCTION / FITNESS FUNCTION
+
+Measures how good your model is
+
+## COST FUNCTION
+
+Measures how bad is your model. This one is mainly used for linear regression problems.
 
 ## DIMENSIONALITY REDUCTION
 
