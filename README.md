@@ -81,7 +81,45 @@ Statistical method used to determine new or unknown data and determining if thes
 
 The goal is to dig into large amounts of data and discover interesting relations between attributes.
 
-##
-##
-##
+## MAIN ML CHALLENGES
+
+### BAD ALGORITHM OR BAD DATA
+
+## SAMPLING BIAS
+
+It is crucial to use a training set that is representative of the cases you want to generalize to. This is often harder than it sounds: if the sample is too small, you will have sampling noise (i.e., nonrepresentative data as a result of chance), but even very large samples can be nonrepresentative if the sampling method is flawed.
+
+## POOR-QUALITY DATA
+
+It is worth the effort to spend time cleaning up your training data. 
+
+* If some instances are clearly outliers, it may help to simply discard them or try to fix the errors manually. 
+* If some instances are missing a few features (e.g., 5% of your customers did not specify their age), you must decide whether you want to ignore this attribute altogether, ignore these instances, fill in the missing values (e.g., with the median age), or train one model with the feature and one model without it, and so on
+
+## IRELEVANT FEATURES
+
+ Your system will only be capable of learning if the training data contains enough relevant features and not too many irrelevant ones. A critical part of the success of a Machine Learning project is coming up with a good set of features to train on. This process, called feature engineering, involves:
+* Feature selection: selecting the most useful features to train on among existing features.
+*  Feature extraction: combining existing features to produce a more useful one (as we saw earlier, dimensionality reduction algorithms can help).
+*   Creating new features by gathering new data. 
+
+## OVERFITTING TRAINING DATA
+
+Overgeneralizing, this will make our model too precise for every instance and use patterns that may show a trend but not really be related one to another, causing it to be really impacted by noise.
+Complex models such as deep neural networks can detect subtle patterns in the data, but if the training set is noisy, or if it is too small (which introduces sampling noise), then the model is likely to detect patterns in the noise itself. Obviously these patterns will not generalize to new instances.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
