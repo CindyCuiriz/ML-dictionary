@@ -108,6 +108,50 @@ It is worth the effort to spend time cleaning up your training data.
 Overgeneralizing, this will make our model too precise for every instance and use patterns that may show a trend but not really be related one to another, causing it to be really impacted by noise.
 Complex models such as deep neural networks can detect subtle patterns in the data, but if the training set is noisy, or if it is too small (which introduces sampling noise), then the model is likely to detect patterns in the noise itself. Obviously these patterns will not generalize to new instances.
 
+## HOW TO SOLVE OVERFITTING
+
+Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. The possible solutions are: * REGULARIZATION: To simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), by reducing the number of attributes in the training data or by constraining the model 
+* To gather more training data
+*  To reduce the noise in the training data (e.g., fix data errors and remove outliers)
+
+## REGULARIZATION
+It is the process of making a model simpler, it can mean adjusting your parameters to find the right balance between fitting the training data perfectly and keeping the model simple enough to ensure that it will generalize well. (degrees of freedom could be adjusted in this instance to the mean)
+
+## HYPERPARAMETERS
+
+This is the way we control regularization to apply during learning. A hyperparameter is a parameter of a learning algorithm (not of the model). It is not affected by the learning algorithm itself; it must be set prior to training and remains constant during training. If you set the regularization hyperparameter to a very large value, you will get an almost flat model (a slope close to zero); the learning algorithm will almost certainly not overfit the training data, but it will be less likely to find a good solution. Tuning hyperparameters is an important part of building a Machine Learning system
+
+## UNDERFITTING THE TRAINING DATA
+
+It occurs when your model is too simple to learn the underlying structure of the data. 
+
+## HOW TO SOLVE UNDERFITTING
+
+* Selecting a more powerful model, with more parameters
+*  Feeding better features to the learning algorithm (feature engineering)
+*   Reducing the constraints on the model (e.g., reducing the regularization hyperparameter)
+
+## TESTING AND VALIDATING
+
+You can and should test your model before you put it in production, to do so we can plit our data in two sets, the training set and the test set, the error rate on new cases is called the GENERALIZATION ERROR/ OUT OF SAMPLE ERROR, by evaluating your model on the test set, you get an estimate of this error. This value will tell you how well your model will perform on instances it has never seen before.
+
+LOW TRAINING ERROR (Your model makes few mistakes on the training set) & HIGH GENERALIZATION ERROR = MODEL IS OVERFITTING THE TRAINING DATA
+
+### COMMON PRACTICE IS TO USE 80% OF THE DATA FOR TRAINING AND 20% FOR TESTING
+### THIS ALSO DEPENDS ON THE SIZE OF THE DATASET, FOR EXAMPLE, A DATASET WITH 10 MILLION INSTANCES IT IS MORE THAN ENOUGH USING 1% FOR TESTING, WHICH EQUALS 100,000 INSTANCES
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
