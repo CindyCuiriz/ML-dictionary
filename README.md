@@ -140,8 +140,13 @@ LOW TRAINING ERROR (Your model makes few mistakes on the training set) & HIGH GE
 ### COMMON PRACTICE IS TO USE 80% OF THE DATA FOR TRAINING AND 20% FOR TESTING
 ### THIS ALSO DEPENDS ON THE SIZE OF THE DATASET, FOR EXAMPLE, A DATASET WITH 10 MILLION INSTANCES IT IS MORE THAN ENOUGH USING 1% FOR TESTING, WHICH EQUALS 100,000 INSTANCES
 
+## HYPERPARAMETER TUNING AND MODEL SELECTION
 
+Sometimes you want to compare different models to see which one is better, to do so you train them and compare how well they generalize using the test set, After that you get to a model that generalizes better, and then you need to apply some regularization to avoid overfitting, to do so you need to choose a regularization hyperparameter. To do so you can again train  100 different models using 100 different values for this hyperparameter.
+ ### Where is the problem? 
+ The problem is that we measured the generalization error multiple times on the test set, and you adapted the model and hyperparameters to produce the best model for that particular set. This means that the model is unlikely to perform as well on new data. 
 
+### How to solve it? 
 
 
 
