@@ -110,7 +110,9 @@ Complex models such as deep neural networks can detect subtle patterns in the da
 
 ## HOW TO SOLVE OVERFITTING
 
-Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. The possible solutions are: * REGULARIZATION: To simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), by reducing the number of attributes in the training data or by constraining the model 
+Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. 
+The possible solutions are:
+* REGULARIZATION: To simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), by reducing the number of attributes in the training data or by constraining the model 
 * To gather more training data
 *  To reduce the noise in the training data (e.g., fix data errors and remove outliers)
 
